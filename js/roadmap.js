@@ -1,4 +1,4 @@
-const API_KEY = "AQ.Ab8RN6LscJYfRKgkoo68OKMompj2-2zk9nd8Jd9qrAXTAV7YAw";
+
 
 const name = localStorage.getItem("name");
 const career = localStorage.getItem("career");
@@ -22,30 +22,34 @@ document.getElementById("userInfo").innerHTML = `
 
 async function askGemini(prompt) {
 
-    const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${API_KEY}`,
-        {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                contents: [{
-                    parts: [{
-                        text: prompt
-                    }]
+    const response = await fetch("/generate", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            contents: [{
+                parts: [{
+                    text: prompt
                 }]
-            })
-        }
-    );
+            }]
+        })
+    });
 
     const data = await response.json();
 
     if (!response.ok) {
-        throw new Error(
-            data.error?.message || "API Request Failed"
-        );
+
+    let errorMessage = "Request Failed";
+
+    if (data.error?.message) {
+        errorMessage = data.error.message;
+    } else if (data.error) {
+        errorMessage = JSON.stringify(data.error);
     }
+
+    throw new Error(errorMessage);
+}
 
     return data.candidates[0].content.parts[0].text;
 }
