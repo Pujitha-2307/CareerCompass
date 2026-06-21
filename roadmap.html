@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Compass AI</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="form-card">
+        <button class="back-btn"
+onclick="window.location.href='index.html'">
+← Back
+</button>
+
+        <h1>🚀 Career Compass AI</h1>
+
+        <p>Your Personalized AI Career Advisor</p>
+
+        <!-- Profile -->
+        <div class="profile-card">
+
+            <h2>👤 Profile</h2>
+
+            <div id="userInfo"></div>
+
+        </div>
+
+        <br>
+
+        <!-- Job Readiness -->
+        <div class="profile-card">
+
+            <h2>🏆 Job Readiness Score</h2>
+
+            <h1 id="readinessScore">0%</h1>
+
+        </div>
+
+        <br>
+
+        <!-- Download PDF -->
+        <button id="downloadBtn">
+            📄 Download Roadmap PDF
+        </button>
+
+        <br><br>
+
+        <!-- Progress Tracker -->
+        <div class="progress-card">
+
+            <h2>✅ Progress Tracker</h2>
+
+            <label><input type="checkbox"> Month 1 Completed</label><br>
+            <label><input type="checkbox"> Month 2 Completed</label><br>
+            <label><input type="checkbox"> Month 3 Completed</label><br>
+            <label><input type="checkbox"> Month 4 Completed</label><br>
+            <label><input type="checkbox"> Month 5 Completed</label><br>
+            <label><input type="checkbox"> Month 6 Completed</label>
+
+        </div>
+
+        <br>
+
+        <!-- AI Roadmap -->
+        <div class="roadmap-card">
+
+            <h2>🧠 AI Career Roadmap</h2>
+
+            <div id="roadmapContainer">
+
+                <h3>Generating AI Roadmap...</h3>
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <!-- Analytics -->
+        <div class="chart-card">
+
+            <h2>📊 Career Analytics</h2>
+
+            <canvas id="careerChart"></canvas>
+
+        </div>
+
+        <br>
+
+        <!-- Interview Questions -->
+        <div class="chart-card">
+
+            <h2>🎤 AI Interview Questions</h2>
+
+            <button id="interviewBtn">
+                Generate Interview Questions
+            </button>
+
+            <br><br>
+
+            <div id="interviewContainer"></div>
+
+        </div>
+
+        <br>
+
+        <!-- Resume Builder -->
+        <div class="chart-card">
+
+            <h2>📄 AI Resume Builder</h2>
+
+            <button id="resumeBtn">
+                Generate Resume Summary
+            </button>
+
+            <br><br>
+
+            <div id="resumeContainer"></div>
+
+        </div>
+
+        <br>
+
+        <!-- Skill Gap Analysis -->
+        <div class="chart-card">
+
+            <h2>📈 AI Skill Gap Analysis</h2>
+
+            <button id="skillGapBtn">
+                Analyze Skill Gap
+            </button>
+
+            <br><br>
+
+            <div id="skillGapContainer"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/roadmap.js"></script>
+
+</body>
+</html>

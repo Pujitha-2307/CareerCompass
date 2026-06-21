@@ -1,0 +1,326 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+body{
+    background:linear-gradient(
+        135deg,
+        #EFF6FF 0%,
+        #DBEAFE 50%,
+        #E0F2FE 100%
+    );
+    min-height:100vh;
+    padding:40px 20px;
+}
+
+.container{
+    width:100%;
+    max-width:850px;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+    color:#0F172A;
+    font-size:3rem;
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+p{
+    text-align:center;
+    color:#64748B;
+    font-size:17px;
+    margin-bottom:25px;
+}
+
+/* Main Card */
+
+.form-card{
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(15px);
+    padding:40px;
+    border-radius:30px;
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.08);
+
+    max-width:850px;
+    margin:auto;
+}
+
+/* Inputs */
+
+input,
+select{
+    width:100%;
+    padding:16px;
+    margin-bottom:18px;
+    border:1px solid #CBD5E1;
+    border-radius:15px;
+    font-size:16px;
+    background:white;
+    transition:0.3s;
+}
+
+input:focus,
+select:focus{
+    outline:none;
+    border-color:#3B82F6;
+    box-shadow:0 0 0 4px rgba(59,130,246,.15);
+}
+
+/* Buttons */
+
+button{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:15px;
+
+    background:linear-gradient(
+        135deg,
+        #2563EB,
+        #3B82F6
+    );
+
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 12px 25px rgba(37,99,235,.25);
+}
+
+/* Back Button */
+
+.back-btn{
+    width:auto;
+    padding:12px 20px;
+    margin-bottom:20px;
+}
+
+/* Dashboard Cards */
+
+.profile-card,
+.progress-card,
+.roadmap-card,
+.chart-card{
+    background:white;
+    padding:25px;
+    margin-top:22px;
+
+    border-radius:22px;
+
+    border:1px solid #E2E8F0;
+
+    box-shadow:
+    0 10px 20px rgba(0,0,0,.05);
+
+    transition:.3s;
+}
+
+.profile-card:hover,
+.progress-card:hover,
+.roadmap-card:hover,
+.chart-card:hover{
+    transform:translateY(-4px);
+}
+
+.profile-card h2,
+.progress-card h2,
+.roadmap-card h2,
+.chart-card h2{
+    color:#0F172A;
+    margin-bottom:18px;
+    font-size:1.3rem;
+}
+
+/* User Info */
+
+#userInfo h3{
+    margin-bottom:10px;
+    color:#334155;
+}
+
+/* Readiness Score */
+
+#readinessScore{
+    text-align:center;
+    color:#22C55E;
+    font-size:3.5rem;
+    font-weight:bold;
+}
+
+/* AI Containers */
+
+#roadmapContainer,
+#interviewContainer,
+#resumeContainer,
+#skillGapContainer{
+    width:100%;
+    overflow-wrap:break-word;
+    word-break:break-word;
+}
+
+/* Beautiful AI Output */
+
+.ai-content{
+    background:#F8FAFC;
+
+    padding:28px;
+
+    border-radius:18px;
+
+    border-left:6px solid #2563EB;
+
+    color:#1E293B;
+
+    font-size:15px;
+
+    line-height:2.1;
+
+    text-align:left;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Pre Tag */
+
+pre{
+    white-space:pre-wrap;
+    word-wrap:break-word;
+    overflow-wrap:break-word;
+
+    background:#F8FAFC;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    border-left:6px solid #2563EB;
+
+    color:#1E293B;
+
+    line-height:2;
+
+    font-size:15px;
+}
+
+/* Progress Tracker */
+
+.progress-card label{
+    display:block;
+    padding:10px 0;
+    color:#334155;
+}
+
+.progress-card input{
+    width:auto;
+    margin-right:10px;
+}
+
+/* Chart */
+
+canvas{
+    margin-top:10px;
+}
+
+/* Download Button */
+
+#downloadBtn{
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+/* Loading */
+
+.loader-card{
+    text-align:center;
+    padding:30px;
+}
+
+.loader{
+    width:50px;
+    height:50px;
+
+    border:5px solid #DBEAFE;
+    border-top:5px solid #2563EB;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#94A3B8;
+    border-radius:20px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    body{
+        padding:15px;
+    }
+
+    .container{
+        max-width:100%;
+    }
+
+    .form-card{
+        padding:20px;
+    }
+
+    h1{
+        font-size:2rem;
+    }
+
+    #readinessScore{
+        font-size:2.5rem;
+    }
+
+    .profile-card,
+    .progress-card,
+    .roadmap-card,
+    .chart-card{
+        padding:18px;
+    }
+}
+.form-card,
+.profile-card,
+.progress-card,
+.roadmap-card,
+.chart-card{
+    background:#ffffff !important;
+}
+
+.ai-content,
+pre{
+    background:#ffffff !important;
+    color:#000000 !important;
+}
