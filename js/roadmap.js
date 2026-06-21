@@ -1,4 +1,4 @@
-const API_KEY = "your_gemini_api_key_here";
+const API_KEY = "AQ.Ab8RN6LscJYfRKgkoo68OKMompj2-2zk9nd8Jd9qrAXTAV7YAw";
 
 const name = localStorage.getItem("name");
 const career = localStorage.getItem("career");
